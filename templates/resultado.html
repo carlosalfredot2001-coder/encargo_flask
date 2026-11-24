@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado del Ejercicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <main class="contenedor">
+
+        {% if promedio is defined %}
+
+            <h1>Resultado del Ejercicio 1</h1>
+
+            <p>El promedio obtenido es:</p>
+
+            <h2>{{ promedio }}</h2>
+
+            <h2>{{ estado }}</h2>
+
+            <a href="/ejercicio1" class="boton">
+                Volver al formulario
+            </a>
+
+        {% else %}
+
+            <h1>Resultado del Ejercicio 2</h1>
+
+            <p>El nombre con mayor cantidad de caracteres es:</p>
+
+            <h2>{{ nombre }}</h2>
+
+            <p>El nombre tiene:</p>
+
+            <h2>{{ cantidad }} caracteres</h2>
+
+            <a href="/ejercicio2" class="boton">
+                Volver al formulario
+            </a>
+
+        {% endif %}
+
+        <a href="/" class="volver">Menú principal</a>
+
+    </main>
+
+</body>
+</html>
